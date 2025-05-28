@@ -1,17 +1,13 @@
-.parceiros-section {
-  padding: 3rem 1rem;
-  background: #f8f9fa;
+/* Estilo moderno para a seção */
+h2 {
   text-align: center;
-}
-
-.parceiros-section h2 {
   font-size: 2.2rem;
   color: #1a1a2e;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.parceiros-section h2::after {
+h2::after {
   content: '';
   position: absolute;
   width: 80px;
@@ -22,141 +18,100 @@
   transform: translateX(-50%);
 }
 
-.carrossel-container {
-  position: relative;
-  max-width: 1000px;
+/* Container principal */
+.parceiros-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 1rem;
 }
 
-.carrossel {
-  display: flex;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  gap: 20px;
-  padding: 20px 0;
-}
-
+/* Cards de parceiros */
 .parceiro-card {
-  min-width: 100%;
-  flex-shrink: 0;
-  transition: all 0.5s ease;
-  transform: scale(0.9);
-  opacity: 0.7;
-  padding: 1.5rem;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.parceiro-card.active {
-  transform: scale(1);
-  opacity: 1;
+.parceiro-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
-.parceiro-card.destaque {
+/* Destaque para a FIAP */
+.parceiro-card.organizadora {
   border: 2px solid #FF5100;
 }
 
+.parceiro-card.organizadora::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #FF5100;
+}
+
+/* Logos dos parceiros */
 .logo-parceiro {
   max-height: 80px;
-  max-width: 200px;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
+  max-width: 180px;
+  margin: 0 auto 1.5rem;
+  display: block;
+  transition: transform 0.3s ease;
+  filter: grayscale(30%);
 }
 
-.parceiro-card.active .logo-parceiro {
-  transform: translateY(-10px);
+.parceiro-card:hover .logo-parceiro {
+  transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
-.info-parceiro h3 {
+/* Informações dos parceiros */
+.parceiro-info h3 {
   color: #0066cc;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.parceiro-info p {
+  color: #666;
+  font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
 
-.info-parceiro p {
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.badge-organizador {
+/* Badge para organizadora */
+.badge {
   display: inline-block;
   background: #FF5100;
   color: white;
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
-  margin-top: 0.8rem;
   font-weight: bold;
+  margin-top: 0.5rem;
 }
 
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  color: #0066cc;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-  background: #0066cc;
-  color: white;
-}
-
-.prev-btn {
-  left: 0;
-}
-
-.next-btn {
-  right: 0;
-}
-
-.indicadores {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 1.5rem;
-}
-
-.indicador {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: #ccc;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.indicador.active {
-  background: #FF5100;
-  transform: scale(1.2);
-}
-
+/* Responsividade */
 @media (max-width: 768px) {
-  .carrossel-container {
-    padding: 0 30px;
+  .parceiros-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   .parceiro-card {
-    padding: 1rem;
+    padding: 1.5rem;
   }
 
   .logo-parceiro {
-    max-height: 60px;
-  }
-
-  .nav-btn {
-    width: 30px;
-    height: 30px;
-    font-size: 1.2rem;
+    max-height: 70px;
   }
 }

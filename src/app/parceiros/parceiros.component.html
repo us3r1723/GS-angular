@@ -1,34 +1,19 @@
-<div class="parceiros-section">
-  <h2>Nossos Parceiros</h2>
-
-  <div class="carrossel-container">
-    <button class="nav-btn prev-btn" (click)="prev()">‹</button>
-
-    <div class="carrossel">
-      @for (parceiro of parceiros; track parceiro.id; let i = $index) {
-        <div class="parceiro-card" [class.active]="i === activeIndex" [class.destaque]="parceiro.destaque">
-          <img [src]="parceiro.logo" [alt]="parceiro.alt" class="logo-parceiro">
-          <div class="info-parceiro">
-            <h3>{{ parceiro.nome }}</h3>
-            <p>{{ parceiro.descricao }}</p>
-            @if (parceiro.destaque) {
-              <span class="badge-organizador">Organizador</span>
-            }
-          </div>
-        </div>
-      }
+<h2>Nossos Parceiros</h2>
+<div class="parceiros-container">
+  @for (parceiro of parceiros; track parceiro.nome) {
+    <div class="parceiro-card" [class.organizadora]="parceiro.isOrganizadora">
+      <img
+        [src]="parceiro.logo"
+        [alt]="parceiro.alt"
+        class="logo-parceiro"
+      />
+      <div class="parceiro-info">
+        <h3>{{ parceiro.nome }}</h3>
+        <p>{{ parceiro.descricao }}</p>
+        @if (parceiro.isOrganizadora) {
+          <span class="badge">Organizadora</span>
+        }
+      </div>
     </div>
-
-    <button class="nav-btn next-btn" (click)="next()">›</button>
-  </div>
-
-  <div class="indicadores">
-    @for (parceiro of parceiros; track parceiro.id; let i = $index) {
-      <span
-        class="indicador"
-        [class.active]="i === activeIndex"
-        (click)="goTo(i)">
-      </span>
-    }
-  </div>
+  }
 </div>

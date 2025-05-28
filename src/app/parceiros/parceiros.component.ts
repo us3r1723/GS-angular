@@ -6,49 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./parceiros.component.css']
 })
 export class ParceirosComponent {
-  activeIndex = 0;
-
+  // Lista de parceiros com efeito de hover
   parceiros = [
     {
-      id: 1,
-      nome: 'FIAP',
-      logo: 'assets/images/fiap-logo.png', // Recomendo colocar na pasta assets
-      alt: 'FIAP - Organizadora do evento',
-      descricao: 'Faculdade de Tecnologia da Informação',
-      destaque: true
-    },
-    {
-      id: 2,
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg',
+      alt: 'Logo da IBM - Parceira do Global Solution',
       nome: 'IBM',
-      logo: 'assets/images/ibm-logo.png',
-      alt: 'IBM - Parceira tecnológica',
-      descricao: 'Soluções em nuvem e IA'
+      descricao: 'Soluções em nuvem e inteligência artificial'
     },
     {
-      id: 3,
-      nome: 'Microsoft',
-      logo: 'assets/images/microsoft-logo.png',
-      alt: 'Microsoft - Parceira tecnológica',
-      descricao: 'Plataformas e soluções digitais'
+      logo: 'https://www.fiap.com.br/wp-content/themes/fiap2016/images/sharing/fiap.png',
+      alt: 'Logo da FIAP - Organizadora do Global Solution',
+      nome: 'FIAP',
+      descricao: 'Faculdade de Tecnologia - Organizadora',
+      isOrganizadora: true
     },
-    {
-      id: 4,
-      nome: 'AWS',
-      logo: 'assets/images/aws-logo.png',
-      alt: 'Amazon Web Services',
-      descricao: 'Líder em serviços de nuvem'
-    }
+
   ];
-
-  next() {
-    this.activeIndex = (this.activeIndex + 1) % this.parceiros.length;
-  }
-
-  prev() {
-    this.activeIndex = (this.activeIndex - 1 + this.parceiros.length) % this.parceiros.length;
-  }
-
-  goTo(index: number) {
-    this.activeIndex = index;
-  }
 }
