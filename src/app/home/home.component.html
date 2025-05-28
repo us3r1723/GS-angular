@@ -1,0 +1,14 @@
+<section>
+  <h1>{{ titulo }}</h1>
+  <p>{{ descricao }}</p>
+  <p>Data do evento: {{ dataEvento }}</p>
+
+  @if (mostrarDestaques) {
+    <h2>Destaques:</h2>
+    <ul>
+      @for (destaque of destaques; track destaque) {
+        <li>{{ destaque }}</li>
+      }
+    </ul>
+  }
+</section>

@@ -1,0 +1,26 @@
+<h2>Programação do Evento</h2>
+<div class="eventos-container">
+  @for (evento of eventos; track evento.id) {
+    <div class="card" appHoverBorder="#FF5100">
+      <h3>{{ evento.titulo }}</h3>
+      <p>Data: {{ evento.data }}</p>
+      <p>Horário: {{ evento.horario }}</p>
+      <p>Local: {{ evento.local }}</p>
+      <button (click)="participar(evento.titulo)">Participar</button>
+    </div>
+  }
+</div>
+
+<!-- Modal de Confirmação -->
+@if (showModal) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <h3>Inscrição Confirmada!</h3>
+      <p>Você se inscreveu no evento: <strong>{{ eventoSelecionado }}</strong></p>
+      <div class="progress-bar">
+        <div class="progress" [style.width.%]="100"></div>
+      </div>
+    </div>
+  </div>
+}

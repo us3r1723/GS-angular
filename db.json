@@ -1,0 +1,25 @@
+{
+  "eventos": [
+    {
+      "id": 1,
+      "titulo": "Kick-off",
+      "data": "26 de maio",
+      "horario": "19H00",
+      "local": "ONLINE"
+    },
+    {
+      "id": 2,
+      "titulo": "Workshop IoT",
+      "data": "27 de maio",
+      "horario": "14H00",
+      "local": "FIAP Paulista"
+    },
+    {
+      "id": 3,
+      "titulo": "Palestra IA",
+      "data": "28 de maio",
+      "horario": "16H00",
+      "local": "FIAP Paulista"
+    }
+  ]
+}
