@@ -20,7 +20,6 @@ import { HoverBorderDirective } from './hover-border.directive';
     HomeComponent,
     InspiracaoComponent,
     ProgramacaoComponent,
-    GiftsComponent,
     ParceirosComponent,
     FooterComponent,
     EventoCardComponent,
